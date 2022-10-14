@@ -250,7 +250,8 @@ else {
 											<?php
 												echo ucwords($difficulty);
 											?>
-										</h2>										
+										</h2>	
+<div class = "row"> <button type="button" name="previous" class="btn btn-primary btn-lg" onclick=download() id="Prev"> Download </button> </div>										
 									</div>
 									<div class="col-sm-2">
 									</div>
@@ -285,7 +286,7 @@ else {
 									
 								</div>
 						<br>
-						<?php include("puzzleSubdisplay.php"); ?>
+						<?php include("puzzleSubdisplay.php"); include("PPTX.php")?>
 			</div>
 		</div>
 </body>
@@ -339,6 +340,10 @@ else {
 			$('#solutionNormal').show();
 			$('#solutionNumberAndLetter').hide();
 		}
+	}
+	
+	function download(){
+		window.location.href = "PPTX.php";
 	}
 </script>
 

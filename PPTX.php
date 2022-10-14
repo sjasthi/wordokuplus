@@ -60,14 +60,28 @@ $shape = $currentSlidee->createRichTextShape()
       ->setOffsetX(170)
       ->setOffsetY(180);
 $shape->getActiveParagraph()->getAlignment()->setHorizontal( Alignment::HORIZONTAL_CENTER );
-$textRun = $shape->createTextRun('Thank you for using PHPPresentation!');
+$textRun = $shape->createTextRun('Hello World!');
 $textRun->getFont()->setBold(true)
                    ->setSize(60)
                    ->setColor( new Color( 'FFE06B20' ) );
 
 
-$oWriterPPTX = IOFactory::createWriter($objPHPPowerPoint, 'PowerPoint2007');
-$oWriterPPTX->save(__DIR__ . "/sample.pptx");
+$newname = "helloworld.pptx";
+
+header("Pragma: no-cache");
+header("Expires: 0");
+header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+header("Content-Type: application/force-download");
+header("Content-Type: application/octet-stream");
+header("Content-Type: application/download");
+header("Content-Disposition: attachment;filename=" . $newname);
+ob_clean();
+flush();
+//readfile($newname);
+//exit();
+
+/**$oWriterPPTX = IOFactory::createWriter($objPHPPowerPoint, 'PowerPoint2007');
+$oWriterPPTX->save(__DIR__ . "/helloworld.pptx");
 $oWriterODP = IOFactory::createWriter($objPHPPowerPoint, 'ODPresentation');
-$oWriterODP->save(__DIR__ . "/sample.odp");
-?>
+$oWriterODP->save(__DIR__ . "/helloworld.odp");
+?>**/

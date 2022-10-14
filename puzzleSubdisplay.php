@@ -13,7 +13,7 @@
 </div>
 
 <?php
-							for($x = $pageNum * 10; $x < $pageNum*10+10 && $x < $numPuzzles; $x++){
+							for($x = 0; $x < $numPuzzles; $x++){
 								
 								$solution = $puzzleArray[$x]->getSolution();
 								$puzzle = $puzzleArray[$x]->getPuzzle();
