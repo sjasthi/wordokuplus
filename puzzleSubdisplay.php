@@ -49,7 +49,7 @@
 							<?php if($hasImages){ ?>
 							<div class="col-sm-4" id="imageBlock">
 								<?php
-									$imagesDir = 'uploads/';
+									$imagesDir = 'uploads/'.session_id().'/';
 									$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 									$randomImage = $images[array_rand($images)];
 								?>

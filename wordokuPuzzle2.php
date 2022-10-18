@@ -290,7 +290,8 @@ else {
 									
 								</div>
 						<br>
-						<?php include("puzzleSubdisplay.php"); include("PPTX.php")?>
+						<?php include("puzzleSubdisplay.php"); include("PPTX.php");
+						?>
 			</div>
 		</div>
 </body>

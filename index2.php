@@ -7,6 +7,7 @@
 		 */
 		 
 	session_start();
+	$_SESSION['ID'] = session_id();
 	ob_start();
 	require("word_processor.php");
 	$ini = parse_ini_file('config.ini');

@@ -1,8 +1,15 @@
 <?php
-
+session_start();
 $countFiles = count($_FILES['files']['name']);
+mkdir("uploads/" . session_id(), 0777);
+$upload_location = "uploads/" . session_id() . "/";
 
-$upload_location = "uploads/";
+$files = glob("uploads/" . session_id());
+foreach($files as $file){
+  if(is_file($file)) {
+    unlink($file); 
+  }
+}
 
 $count = 0;
 for($i=0; $i<$countFiles; $i++){
