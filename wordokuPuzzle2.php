@@ -280,6 +280,10 @@ else {
 															echo('checked');
 																				}
 												?>> Show solutions?
+												
+												<input type="checkbox" class="solutionMode2" name="showSolutionTextBox" onchange="valueChanged()">
+												<label class = "solutionMode2">List solutions after puzzles?</label>
+												
 											</center>
 										</div>
 									</div>
@@ -295,9 +299,13 @@ else {
 	// Shows the solution on initialization based on whether the box is checked
 	if($('.showSolution').is(":checked")){
 		$(".solutionSection").show();
+		$('.solutionMode2').show();
+		$('.solutionSection2').hide();
 	}
 	else{
 		$(".solutionSection").hide();
+		$('.solutionMode2').hide();
+		$('.solutionSection2').hide();
 	}
 	
 	// Set default hidden/shown puzzles
@@ -310,10 +318,19 @@ else {
 	// Updates the solution section to hidden/visable on check box update
 	function valueChanged(){
 		if($('.showSolution').is(":checked")){  
-			$(".solutionSection").show();
+			$('.solutionMode2').show();
+			if($('.solutionMode2').is(":checked")){
+				$(".solutionSection2").show();
+				$(".solutionSection").hide();
+			}else{
+				$(".solutionSection").show();
+				$(".solutionSection2").hide();
+			}
 		}
 		else{
 			$(".solutionSection").hide();
+			$(".solutionSection2").hide();
+			$(".solutionMode2").hide();
 		}
 	}
 	
