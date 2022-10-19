@@ -20,7 +20,8 @@ include("./nav.php");
 require("Wordoku.php");
 require("word_processor.php");
 $ini = parse_ini_file('config.ini');
- 
+$pageNum = 0;
+$hasImages = $_GET['hasImages'];
 
   $sleep = true;
   $touched = isset($_POST['ident']);
@@ -158,13 +159,13 @@ else {
 			//$wordoku = new Wordoku($sizeNum, $word, $hiddenCount);
 		//}
 		//else{
-			$_SESSION['puzzleArray'] = array();
+			$puzzleArray = array();
 			for($i = 0; $i < $numPuzzles; $i++){
 				$wordoku = new Wordoku($sizeNum, $word, $hiddenCount);
-				array_push($_SESSION['puzzleArray'], $wordoku);
-				$solution = $_SESSION['puzzleArray'][0]->getSolution();
-				$puzzle = $_SESSION['puzzleArray'][0]->getPuzzle();
-				$characters = $_SESSION['puzzleArray'][0]->getCharacters();
+				array_push($puzzleArray, $wordoku);
+				$solution = $puzzleArray[0]->getSolution();
+				$puzzle = $puzzleArray[0]->getPuzzle();
+				$characters = $puzzleArray[0]->getCharacters();
 				$word = $wordoku->getWord();
 				$_SESSION["solution"] = $solution;
 				$_SESSION["puzzle"] = $puzzle;
@@ -233,7 +234,7 @@ else {
     <meta name="viewport" content="width=device-width, initial-scale = 1">
     <title>Wordoku Puzzle Generator</title>
 </head>
-<body onload="getImage()">
+<body>
 		<div class="container-fluid">
 			<div class="jumbotron" id="jumbos">
 			</div>
@@ -248,9 +249,9 @@ else {
 										<h2>Wordoku Plus
 											<?php
 												echo ucwords($difficulty);
-												echo $_SESSION['pageNum'];
 											?>
-										</h2>										
+										</h2>	
+<div class = "row"> <button type="button" name="previous" class="btn btn-primary btn-lg" onclick=download() id="Prev"> Download </button> </div>										
 									</div>
 									<div class="col-sm-2">
 									</div>
@@ -279,169 +280,33 @@ else {
 															echo('checked');
 																				}
 												?>> Show solutions?
+												
+												<input type="checkbox" class="solutionMode2" name="showSolutionTextBox" onchange="valueChanged()">
+												<label class = "solutionMode2">List solutions after puzzles?</label>
+												
 											</center>
 										</div>
 									</div>
-									<<div class="row">
-											<div align = "right" class ="col-sm-6"><button type="button" name="previous" class="btn btn-primary btn-lg" value="Previous" onclick="previous()"> Previous </button></div>
-											
-											<div class ="col-sm-6"><button type="button" name="next" class="btn btn-primary btn-lg" value=" Next " onclick="next()">  Next  </button></div>
-									</div>
+									
 								</div>
 						<br>
-						<?php
-							for($x = $_SESSION['pageNum'] * 10; $x < $_SESSION['pageNum']*10+10 && $x < $numPuzzles; $x++){
-								
-								$solution = $_SESSION['puzzleArray'][$x]->getSolution();
-								$puzzle = $_SESSION['puzzleArray'][$x]->getPuzzle();
-		
-								$_SESSION["solution"] = $solution;
-								$_SESSION["puzzle"] = $puzzle;
-							
+						<?php include("puzzleSubdisplay.php"); include("PPTX.php");
 						?>
-						<div class="panel-body">
-							</br></br>
-							<!-- NORMAL -->
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-sm-12">
-										<div align="center"><h2>Puzzle <?php print_r($x+1) ?></h2></div>
-									</div>
-								</div>
-							</div>
-							<div class="row" style="padding-bottom:20px">
-								<div class="form-group" style='width:40%;margin:auto;border:2px solid black;padding-top:10px;padding-bottom:10px;text-align:center'>
-									<div class="text-center">
-										<h3>Character Key</h3>
-									</div>
-								</div>
-								<div class="form-group" style='width:40%;margin:auto;border:2px solid black;padding-top:10px;padding-bottom:10px;text-align:center'>
-									<div class="text-center">
-										<h3>
-										
-										<?php
-											// Displays input word characters seperated out
-											foreach ($characters as $key => $letter){
-												echo($letter." ");
-											}
-										?>
-										</h3>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4" id="imageBlock">
-								<?php
-									$imagesDir = 'uploads/';
-									$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-									$randomImage = $images[array_rand($images)];
-								?>
-								<img id="userImg" src="<?php echo $randomImage; ?>">
-							</div>
-							<div class="col-sm-8"  id="puzzleNormal">
-								<div class="puzzle">
-									<table id="grid">
-										<?php 
-											// Display a normal/default puzzle
-											$i = 0;
-											foreach ($puzzle as $key => $value) 
-											{
-												echo'<tr>';
-												foreach ($value as $k => $val){
-													if($val != " "){
-														echo'<td id="cell'.$size.'-'.$i.'" bgcolor="#EEEEEE"> '.$val.' </td>
-														';
-													}
-													else{
-														echo'<td id="cell'.$size.'-'.$i.'"> '.$val.' </td>
-														';
-													}
-													$i++;
-												}
-												echo'</tr>';
-											}
-										?>
-									</table>
-								</div>
-							</div>
-
-							</div>					
-					</div>
-					<div class="solutionSection"> 
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-sm-12">
-										<div align="center"><h2>Solution <?php print_r($x+1) ?></h2></div>
-									</div>
-								</div>
-							</div>
-							<div class="panel-body">
-								<div class="row">
-									<div class="form-group" style='width:40%;margin:auto;border:2px solid black;padding-top:10px;padding-bottom:10px;text-align:center'>
-										<div class="text-center">
-											<h3>Character Key</h3>
-										</div>
-									</div>
-									<div class="form-group" style='width:40%;margin:auto;border:2px solid black;padding-top:10px;padding-bottom:10px;text-align:center'>
-										<div class="text-center">
-											<h3>
-												<?php
-													// Displays input word characters seperated out
-													foreach ($characters as $key => $letter){
-														echo($letter." ");
-													}
-												?>
-											</h3>
-										</div>
-									</div>
-								</div>
-															
-								</br></br>
-								
-								<!-- Normal Solution -->
-								<div class="col-sm-12" id="solutionNormal">
-									<div class="col-sm-12">
-										<div class="puzzle">
-											<table id="grid">
-												<?php 
-													// Displays the normal/default solution style
-													$i = 0;
-													foreach ($solution as $key => $value) 
-													{
-														echo'<tr>';
-														foreach ($value as $k => $val){
-															if($puzzle[$key][$k] != " "){
-																echo'<td id="cell'.$size.'-'.$i.'" bgcolor="#EEEEEE"> '.$val.' </td>
-																';
-															}
-															else{
-																echo'<td id="cell'.$size.'-'.$i.'" bgcolor="#EEEEEE" style="color: red;"> '.$val.' </td>
-																';
-															}
-															$i++;
-														}
-														echo'</tr>';
-													}
-												?>
-											</table>
-										</div>
-									</div>
-								</div>
-								</div>
-						</div>
-					</div>	
-				</div>
-				<?php } ?>
 			</div>
 		</div>
 </body>
 <script>
+	var num = 0;
 	// Shows the solution on initialization based on whether the box is checked
 	if($('.showSolution').is(":checked")){
 		$(".solutionSection").show();
+		$('.solutionMode2').show();
+		$('.solutionSection2').hide();
 	}
 	else{
 		$(".solutionSection").hide();
+		$('.solutionMode2').hide();
+		$('.solutionSection2').hide();
 	}
 	
 	// Set default hidden/shown puzzles
@@ -454,10 +319,19 @@ else {
 	// Updates the solution section to hidden/visable on check box update
 	function valueChanged(){
 		if($('.showSolution').is(":checked")){  
-			$(".solutionSection").show();
+			$('.solutionMode2').show();
+			if($('.solutionMode2').is(":checked")){
+				$(".solutionSection2").show();
+				$(".solutionSection").hide();
+			}else{
+				$(".solutionSection").show();
+				$(".solutionSection2").hide();
+			}
 		}
 		else{
 			$(".solutionSection").hide();
+			$(".solutionSection2").hide();
+			$(".solutionMode2").hide();
 		}
 	}
 	
@@ -486,30 +360,8 @@ else {
 		}
 	}
 	
-	function previous(){
-		<?php
-			if($_SESSION['pageNum'] > 0){	
-				$_SESSION['pageNum']--;
-		?>
-		$("#displayArea").load(document.URL + " #displayArea" );
-		<?php } ?>
-	}												
-												
-	function next(){
-		<?php
-			if($_SESSION['pageNum']*10 +10 <= $numPuzzles){
-				$_SESSION['pageNum']++;;
-			
-		?>
-		$("#displayArea").load(document.URL + " #displayArea" );
-		<?php } ?>
-	}
-	
-	function getImage(){
-		var files = glob('uploads'.'/*.*');
-		var fileNum = Math.round(Math.random() * files.length);
-		document.write('<img src="/uploads/'+files[fileNum]+' ">');
-		alert("PICTURE!");
+	function download(){
+		window.location.href = "PPTX.php";
 	}
 </script>
 

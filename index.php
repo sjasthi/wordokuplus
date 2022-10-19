@@ -6,7 +6,8 @@
 		 *  After validation of input, the page is redirected to the Wordoku Puzzle page as a GET request with passed in parameters.
 		 */
 		 
-	
+	session_start();
+	$_SESSION['ID'] = session_id();
 	ob_start();
 	require("word_processor.php");
 	$ini = parse_ini_file('config.ini');
@@ -38,11 +39,13 @@
 		if(isset($_POST["size"]) &&
 				isset($_POST["difficulty"]) &&
 				isset($_POST["word"]) &&
+				isset($_POST["puzzleNum"]) &&
 				isset($_POST["hiddenChar"])){
 			
 			$size = $_POST["size"];
 			
 			$hiddenCount = filter_input(INPUT_POST, "hiddenChar", FILTER_VALIDATE_INT);
+			$numPuzzles = filter_input(INPUT_POST, "puzzleNum", FILTER_VALIDATE_INT);
 			
 			$word = $_POST["word"];
 						
@@ -116,11 +119,12 @@
 
 			// If no warning message, direct user to the puzzle
 			// Otherwise keep user on Index page and display the warning message
+			
 			if($warningMessage == ""){
 				// Address should be in format: http://localhost/wordoku/wordokupuzzle.php?size=2x2&difficulty=beginner&word=ABCD
-				$url = "wordokuPuzzle.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution;
+				$url = "wordokuPuzzle2.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution."&numPuzzles=".$numPuzzles."&hasImages=true";
 				//print_r("</br>");
-				//print_r($url);
+				print_r($url);
 				
 				header("Location:".$url);
 				die();
@@ -220,11 +224,32 @@
 									<textarea class="form-control" style="resize: none;" rows="1" id="hiddenChar" name="hiddenChar" ></textarea>
 									<label class="charLabel" name="charName" value="">Updates on size or difficulty change</label>
                                 </div>
-                            </div>
+								<div class="col-sm-3">
+									<label>Number of Puzzles: </label>
+									<textarea class="form-control" style="resize: none;" rows="1" id="puzzleNum" name="puzzleNum">1</textarea>
+								</div>
+
+							<button type="button" class="collapsible" onclick="displayAccordian()">Add Images?</button>
+							<div class="content" id = "content">
+									<div class="col-sm-6">
+										<input type="file" name="files" id="files" class="btn btn-primary btn-lg" multiple>
+										<input type="button" id="btn_uploadfile" class="btn btn-primary btn-lg" value="Upload" onclick="uploadImgs();">
+									</div>
+									<div class="col-sm-3">
+										<input type="button" name="flickr" id="flickr" class="btn btn-primary btn-lg" value = 'Access Flickr'>
+									</div>
+									<div class="col-sm-3">
+										<input type="button" name="google photos" id="google photos" class="btn btn-primary btn-lg" value = 'Access Google Photos'>
+									</div>
+	
+							</div>
                             <div class="row">
-                                 <div class="col-sm-12">
+                                 <div class="col-sm-3">
                                         <input type="checkbox" name="showSolution" checked> Show solution on creation?
-                                 </div>     
+                                 </div>  
+								 <div class="col-sm-3">
+                                        <input type="checkbox" name="exportToPP" checked> Export to Power Point
+                                 </div>   								 
                             </div>
                             </br>
 							<div class="row"></div>
@@ -246,7 +271,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12"><input type="submit" name="submit" class="btn btn-primary btn-lg" value="Generate"></div>
+                    <div class="col-sm-6"><input type="submit" name="submit" class="btn btn-primary btn-lg" value="Generate"></div>
                 </div>
             </div>
         </div>
@@ -340,5 +365,67 @@
 			}
 		}
 	}
+	
+	function displayAccordian(){
+		if(document.getElementById("content").style.display == "block")
+			document.getElementById("content").style.display = "none";
+		else
+			document.getElementById("content").style.display = "block";
+	}
+	
+	function uploadImgs(){
+		var totalfiles = document.getElementById('files').files.length;
+
+		if(totalfiles > 0 ){
+
+			var formData = new FormData();
+			for (var index = 0; index < totalfiles; index++) {
+				formData.append("files[]", document.getElementById('files').files[index]);
+			}
+
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "ajaxfile.php", true);
+			xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+
+				var response = this.responseText;
+
+				alert(response + " File uploaded.");
+				}
+			};
+			xhttp.send(formData);
+		}
+		else{
+			alert("Please select a file");
+		}
+	}
+	
+	
 </script>
+
+<style>
+	.collapsible {
+		background-color: #eee;
+		color: #444;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 15px;
+	}
+
+	.active, .collapsible:hover {
+		background-color: #ccc;
+	}
+
+	.content {
+		padding: 0 18px;
+		display: none;
+		overflow: hidden;
+		background-color: #f1f1f1;
+	}
+	
+</style>
 </html>

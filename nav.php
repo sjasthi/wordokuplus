@@ -33,7 +33,7 @@ require_once './initialize.php';
   <div id="wrap">
     <div id="nav">
       <ul>
-        <a href="index2.php">
+        <a href="index.php">
           <li class="horozontal-li-logo">
             <img src="./images/wordoku.png">
             <br />Wordoku</li>
