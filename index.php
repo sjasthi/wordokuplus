@@ -158,6 +158,9 @@
 		}
 	}
 ?>
+
+
+
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN''http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
@@ -239,7 +242,7 @@
 										<input type="button" name="flickr" id="flickr" class="btn btn-primary btn-lg" value = 'Access Flickr'>
 									</div>
 									<div class="col-sm-3">
-										<input type="button" name="google photos" id="google photos" class="btn btn-primary btn-lg" value = 'Access Google Photos'>
+										<input type="button" name="google photos" id="google photos" class="btn btn-primary btn-lg" value = 'Access Google Photos' onclick=showPickerDialog()>
 									</div>
 	
 							</div>
@@ -278,6 +281,8 @@
     </form>
 </body>
 </html>
+
+
 
 <script>
 	<?php
@@ -399,9 +404,93 @@
 			alert("Please select a file");
 		}
 	}
-	
-	
+		
 </script>
+
+<!-- The Google API Loader script for Google Drive button. -->
+<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+<script>
+	function showPickerDialog(){
+    	loadPicker()
+    }
+</script>
+
+<!-- The Google Picker API script. -->
+<script>
+var clientId = '789960945798-6cu10t645cum5jq3qp0l6sdhdgppt8ec.apps.googleusercontent.com'
+var APIKey = 'AIzaSyDrtLOIDlmxHVoilBAyZ82z8hzV_ClTSYQ'
+var projectId = 'cryptic-wonder-365009'
+var oauthToken
+var pickerAPILoaded = false
+
+// Scope to use to access user's Drive items.
+var scope = 'https://www.googleapis.com/auth/drive.file'
+
+// client library of Google
+
+function pickerDialog() {
+	loadPicker()
+}
+
+// Use the Google API Loader script to load the google.picker script.
+function loadPicker() {
+	gapi.load('auth', {'callback': onAuthApiLoad})
+	gapi.load('picker', {'callback': onPickerApiLoad})
+}
+
+function onAuthApiLoad() {
+	window.gapi.auth.authorize({
+		'client_id': clientId,
+		'scope': scope,
+		'immediate': false
+	},
+	handleAuthResult)
+}
+
+function onPickerApiLoad() {
+	pickerAPILoaded = true
+	createPicker()
+}
+
+function handleAuthResult(authResult) {
+	// access token
+	if (authResult && !authResult.error) {
+		oauthToken = authResult.access_token
+		createPicker()
+	}
+}
+
+// Create and render a Picker object for searching images.
+function createPicker() {
+	if (pickerAPILoaded && oauthToken) {
+		var view = new google.picker.View(google.picker.ViewId.DOCS)
+		view.setMimeTypes("image/png,image/jpeg,image/jpg,image/jif,image/pdf")
+		var picker = new google.picker.PickerBuilder()
+		.enableFeature(google.picker.Feature.NAV_HIDDEN)
+		.enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+		.setAppId(projectId)
+		.setOAuthToken(oauthToken)
+		.addView(view)
+		.addView(new google.picker.DocsUploadView())
+		.setDeveloperKey(key)
+		.setCallback(pickerCallback)
+		.build()
+
+		picker.setVisible(true)
+	}
+}
+
+// A simple callback implementation.
+function pickerCallback(data) {
+	if (data.action == google.picker.Action.PICKED) {
+		var fileId = data.docs[0].id;
+		alert('The user selected: ' + fileId);
+	}
+}
+
+</script>
+
+
 
 <style>
 	.collapsible {
