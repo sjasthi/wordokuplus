@@ -8,15 +8,18 @@ $size = $_SESSION['size'];
 $words = $_SESSION["words"];
 $images = $_SESSION["images"];
 
+
 $total_images = count($images);
 $total_puzzles = count($puzzles);
 
 if ($size == "2x2") {
+
       $cols = 4;
       $boxSize = 2;
       $margin = 10;
       $width = 500;
       $fontSize = 18;
+
 } elseif ($size == "3x3") {
       $cols = 9;
       $boxSize = 3;
@@ -24,6 +27,7 @@ if ($size == "2x2") {
       $width = 500;
       $fontSize = 18;
 } elseif ($size == "4x4") {
+
       $cols = 16;
       $boxSize = 4;
       $margin = 10;
@@ -31,6 +35,10 @@ if ($size == "2x2") {
       $fontSize = 14;
 } else {
       die("We cannot hanlde this size: " . $size);
+=======
+}
+else{
+      die("We cannot hanlde this size: ".$size);
 }
 
 
