@@ -35,10 +35,6 @@ if ($size == "2x2") {
       $fontSize = 14;
 } else {
       die("We cannot hanlde this size: " . $size);
-=======
-}
-else{
-      die("We cannot hanlde this size: ".$size);
 }
 
 
@@ -244,6 +240,6 @@ $oWriterPPTX->save(__DIR__ . "/" . $filename);
 echo '<h1 style="text-align:center; margin-top:50px"> Wordoku has been saved </h1><p style="text-align:center; margin-top:20px">Click the link below to download now</p>';
 echo '<p style="text-align:center; margin-top:20px; font-size:20px"><a href="' . $filename . '">Download now</a></p>';
 
-echo '<br><p style="text-align:center; margin-top:20px; font-size:20px"><a href="index3a.php">Back Home</a></p>';
+echo '<br><p style="text-align:center; margin-top:20px; font-size:20px"><a href="index.php">Back Home</a></p>';
 
 exit();
