@@ -5,9 +5,39 @@
 		 *  On first submission page is done as a POST request to validate user input.
 		 *  After validation of input, the page is redirected to the Wordoku Puzzle page as a GET request with passed in parameters.
 		 */
-		 
-	session_start();
-	$_SESSION['ID'] = session_id();
+
+	
+	//  Image upload
+	if(isset($_FILES["imgfiles"])){
+
+       // die(json_encode($_FILES["imgfiles"]));
+
+		// We will upload the images in a unique folder
+		$image_folder = md5(time()) . '_' . random_int(0, 100);
+		// Create the folder
+		mkdir("uploads/".$image_folder, 0775, true);
+		$files = $_FILES["imgfiles"];
+		$files_len = count($files['name']);
+
+		$upload_cnt = 0;
+		for($i = 0; $i < $files_len; $i++) {
+			$mime = strtolower(pathinfo($files["name"][$i], PATHINFO_EXTENSION));
+			if(in_array($mime, ['png', 'jpg', 'jpeg', 'gif', 'svg'])){
+				if($files["size"][$i] > 50){ // Only allow valid file
+					move_uploaded_file($files['tmp_name'][$i], "uploads/".$image_folder."/".$i.".png");
+					$upload_cnt++;
+				}
+			}
+		}
+		if($upload_cnt > 0){
+			session_start();
+			$_SESSION['images'] = $image_folder;
+		}
+		die('success'.$upload_cnt);
+	}
+
+
+	
 	ob_start();
 	require("word_processor.php");
 	$ini = parse_ini_file('config.ini');
@@ -39,13 +69,11 @@
 		if(isset($_POST["size"]) &&
 				isset($_POST["difficulty"]) &&
 				isset($_POST["word"]) &&
-				isset($_POST["puzzleNum"]) &&
 				isset($_POST["hiddenChar"])){
 			
 			$size = $_POST["size"];
 			
 			$hiddenCount = filter_input(INPUT_POST, "hiddenChar", FILTER_VALIDATE_INT);
-			$numPuzzles = filter_input(INPUT_POST, "puzzleNum", FILTER_VALIDATE_INT);
 			
 			$word = $_POST["word"];
 						
@@ -119,12 +147,19 @@
 
 			// If no warning message, direct user to the puzzle
 			// Otherwise keep user on Index page and display the warning message
-			
 			if($warningMessage == ""){
+				session_start();
+				if(isset($_SESSION['images'])){
+					$extra =  "&image_folder=".$_SESSION['images'];
+					unset($_SESSION['images']);
+				}
+				else{
+					$extra = "";
+				}
 				// Address should be in format: http://localhost/wordoku/wordokupuzzle.php?size=2x2&difficulty=beginner&word=ABCD
-				$url = "wordokuPuzzle.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution."&numPuzzles=".$numPuzzles."&hasImages=true";
+				$url = "wordokuPuzzle3a.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution.$extra;
 				//print_r("</br>");
-				print_r($url);
+				//print_r($url);
 				
 				header("Location:".$url);
 				die();
@@ -176,7 +211,7 @@
     <title>Wordoku Puzzle Generator</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="index3a.php" method="post">
         <div class="container-fluid">
             <div class="jumbotron" id="jumbos">
             </div>
@@ -224,32 +259,11 @@
 									<textarea class="form-control" style="resize: none;" rows="1" id="hiddenChar" name="hiddenChar" ></textarea>
 									<label class="charLabel" name="charName" value="">Updates on size or difficulty change</label>
                                 </div>
-								<div class="col-sm-3">
-									<label>Number of Puzzles: </label>
-									<textarea class="form-control" style="resize: none;" rows="1" id="puzzleNum" name="puzzleNum">1</textarea>
-								</div>
-
-							<button type="button" class="collapsible" onclick="displayAccordian()">Add Images?</button>
-							<div class="content" id = "content">
-									<div class="col-sm-6">
-										<input type="file" name="files" id="files" class="btn btn-primary btn-lg" multiple>
-										<input type="button" id="btn_uploadfile" class="btn btn-primary btn-lg" value="Upload" onclick="uploadImgs();">
-									</div>
-									<div class="col-sm-3">
-										<input type="button" name="flickr" id="flickr" class="btn btn-primary btn-lg" value = 'Access Flickr'>
-									</div>
-									<div class="col-sm-3">
-										<input type="button" name="google photos" id="google photos" class="btn btn-primary btn-lg" value = 'Access Google Photos'>
-									</div>
-	
-							</div>
+                            </div>
                             <div class="row">
-                                 <div class="col-sm-3">
+                                 <div class="col-sm-12">
                                         <input type="checkbox" name="showSolution" checked> Show solution on creation?
-                                 </div>  
-								 <div class="col-sm-3">
-                                        <input type="checkbox" name="exportToPP" checked> Export to Power Point
-                                 </div>   								 
+                                 </div>     
                             </div>
                             </br>
 							<div class="row"></div>
@@ -267,11 +281,29 @@
                                     </div>
                                 </div>
                             </div>
+							<div class="row" style="font-size: 16px;">
+								<p style="margin-left: 20px;">Image options</p>
+								<ul style="list-style-type:circle">
+									<li>
+										Upload from local computer  <span id="sbutton"><button class="btn btn-primary" type="button" onclick="openFile()"> Upload...</button></span>
+										<input id="imgfiles" style="display: none;" type="file" multiple accept="image/*" onchange="upload_images()">
+										<br><br>
+									</li>
+									<li>
+										Upload from flickr:   <input placeholder="enter flickr link" style="max-width: 300px;">
+										<br><br>
+									</li>
+									<li>
+										Connect to google drive  <input placeholder="enter google link" style="max-width: 300px;">
+										<br><br>
+									</li>
+								</ul>
+							</div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6"><input type="submit" name="submit" class="btn btn-primary btn-lg" value="Generate"></div>
+                    <div class="col-sm-12"><input type="submit" name="submit" class="btn btn-primary btn-lg" value="Generate"></div>
                 </div>
             </div>
         </div>
@@ -365,67 +397,50 @@
 			}
 		}
 	}
+
+
+
 	
-	function displayAccordian(){
-		if(document.getElementById("content").style.display == "block")
-			document.getElementById("content").style.display = "none";
-		else
-			document.getElementById("content").style.display = "block";
-	}
-	
-	function uploadImgs(){
-		var totalfiles = document.getElementById('files').files.length;
+function openFile(){
 
-		if(totalfiles > 0 ){
+	$('input[type="file"]')[0].click();
+}
 
-			var formData = new FormData();
-			for (var index = 0; index < totalfiles; index++) {
-				formData.append("files[]", document.getElementById('files').files[index]);
-			}
 
-			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "ajaxfile.php", true);
-			xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
+function upload_images() {
 
-				var response = this.responseText;
+var fdata = new FormData();
+if($("#imgfiles")[0].files.length == 0) return;
 
-				alert(response + " File uploaded.");
-				}
-			};
-			xhttp.send(formData);
+let files = $("#imgfiles")[0].files;
+for(let i = 0; i < files.length; i++){
+	fdata.append("imgfiles[]", files[i]);
+}
+
+var sbnx = $("#sbutton").html();
+$("#sbutton").html('<span class="text-primary" style="margin-left:50px;">uploading...</span>');
+
+$.ajax({
+	type: "POST",
+	url: "",
+	data: fdata,
+	cache: false,
+	processData: false,
+	contentType: false,
+	success: function(data) { //console.log(data);
+		$("#sbutton").html(sbnx);
+		if (data.substr(0, 7) == 'success') {
+			$("#sbutton").html('<span style="color:#090; marging-left:50" >'+data.substr(7)+' images uploaded</span>');
+		} else {
+			$("#sbutton").html(sbnx);
+			alert(data);
 		}
-		else{
-			alert("Please select a file");
-		}
+
 	}
-	
+});
+}
+
+
 	
 </script>
-
-<style>
-	.collapsible {
-		background-color: #eee;
-		color: #444;
-		cursor: pointer;
-		padding: 18px;
-		width: 100%;
-		border: none;
-		text-align: left;
-		outline: none;
-		font-size: 15px;
-	}
-
-	.active, .collapsible:hover {
-		background-color: #ccc;
-	}
-
-	.content {
-		padding: 0 18px;
-		display: none;
-		overflow: hidden;
-		background-color: #f1f1f1;
-	}
-	
-</style>
 </html>
