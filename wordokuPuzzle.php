@@ -111,6 +111,8 @@ else {
   } //end else
 
 		
+		$imagesDir = 'uploads/'.session_id().'/';
+		$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 		
 		$hiddenValues = [];
 		

@@ -57,6 +57,13 @@
 				$showSolution = "false";
 			}
 			
+			if(isset($_POST["hasImages"])){
+				$hasImages = true;
+			}
+			else{
+				$hasImages = false;
+			}
+			
 			// Create warning message string. If there is a message at the end, keep the user on index page and display warning message.
 			$warningMessage = "";
 			
@@ -122,7 +129,7 @@
 			
 			if($warningMessage == ""){
 				// Address should be in format: http://localhost/wordoku/wordokupuzzle.php?size=2x2&difficulty=beginner&word=ABCD
-				$url = "wordokuPuzzle.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution."&numPuzzles=".$numPuzzles."&hasImages=true";
+				$url = "wordokuPuzzle.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution."&numPuzzles=".$numPuzzles."&hasImages=false";
 				//print_r("</br>");
 				print_r($url);
 				
@@ -251,7 +258,7 @@
                                         <input type="checkbox" name="showSolution" checked> Show solution on creation?
                                  </div>  
 								 <div class="col-sm-3">
-                                        <input type="checkbox" name="exportToPP" checked> Export to Power Point
+                                        <input type="checkbox" name="hasImages" checked> Show Images?
                                  </div>   								 
                             </div>
                             </br>
