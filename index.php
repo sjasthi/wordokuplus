@@ -246,7 +246,7 @@
 										<input type="button" id="btn_uploadfile" class="btn btn-primary btn-lg" value="Upload" onclick="uploadImgs();">
 									</div>
 									<div class="col-sm-3">
-										<input type="button" name="flickr" id="flickr" class="btn btn-primary btn-lg" value = 'Access Flickr'>
+										<input type="button" name="flickr" id="flickr" class="btn btn-primary btn-lg" value = 'Access Flickr' onclick="accessFlickr();">
 									</div>
 									<div class="col-sm-3">
 										<input type="button" name="google photos" id="google photos" class="btn btn-primary btn-lg" value = 'Access Google Photos' onclick=showPickerDialog()>
@@ -421,6 +421,30 @@
     	loadPicker()
     }
 </script>
+
+
+<!-- The Flickr upload script 
+Application Key:
+35eec536773b5a78381170dfb88a1f18
+
+Secret Key:
+2f0faa565d31ab66
+
+limited to 3600 queries per hour
+
+flic.kr/p/[short-photo-id] form
+-->
+<script>
+var applicationKey = '35eec536773b5a78381170dfb88a1f18'
+var secretKey = '2f0faa565d31ab66'
+var flickrAuthUrl = 'https://www.flickr.com/services/oauth/authorize'
+function accessFlickr(){
+	
+}
+</script>
+
+
+
 
 <!-- The Google Picker API script. -->
 <script>
