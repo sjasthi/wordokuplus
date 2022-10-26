@@ -57,6 +57,13 @@
 				$showSolution = "false";
 			}
 			
+			if(isset($_POST["hasImages"])){
+				$hasImages = true;
+			}
+			else{
+				$hasImages = false;
+			}
+			
 			// Create warning message string. If there is a message at the end, keep the user on index page and display warning message.
 			$warningMessage = "";
 			
@@ -122,7 +129,7 @@
 			
 			if($warningMessage == ""){
 				// Address should be in format: http://localhost/wordoku/wordokupuzzle.php?size=2x2&difficulty=beginner&word=ABCD
-				$url = "wordokuPuzzle.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution."&numPuzzles=".$numPuzzles."&hasImages=true";
+				$url = "wordokuPuzzle.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution."&numPuzzles=".$numPuzzles."&hasImages=false";
 				//print_r("</br>");
 				print_r($url);
 				
@@ -239,7 +246,7 @@
 										<input type="button" id="btn_uploadfile" class="btn btn-primary btn-lg" value="Upload" onclick="uploadImgs();">
 									</div>
 									<div class="col-sm-3">
-										<input type="button" name="flickr" id="flickr" class="btn btn-primary btn-lg" value = 'Access Flickr'>
+										<input type="button" name="flickr" id="flickr" class="btn btn-primary btn-lg" value = 'Access Flickr' onclick="accessFlickr();">
 									</div>
 									<div class="col-sm-3">
 										<input type="button" name="google photos" id="google photos" class="btn btn-primary btn-lg" value = 'Access Google Photos' onclick=showPickerDialog()>
@@ -251,7 +258,7 @@
                                         <input type="checkbox" name="showSolution" checked> Show solution on creation?
                                  </div>  
 								 <div class="col-sm-3">
-                                        <input type="checkbox" name="exportToPP" checked> Export to Power Point
+                                        <input type="checkbox" name="hasImages" checked> Show Images?
                                  </div>   								 
                             </div>
                             </br>
@@ -414,6 +421,30 @@
     	loadPicker()
     }
 </script>
+
+
+<!-- The Flickr upload script 
+Application Key:
+35eec536773b5a78381170dfb88a1f18
+
+Secret Key:
+2f0faa565d31ab66
+
+limited to 3600 queries per hour
+
+flic.kr/p/[short-photo-id] form
+-->
+<script>
+var applicationKey = '35eec536773b5a78381170dfb88a1f18'
+var secretKey = '2f0faa565d31ab66'
+var flickrAuthUrl = 'https://www.flickr.com/services/oauth/authorize'
+function accessFlickr(){
+	
+}
+</script>
+
+
+
 
 <!-- The Google Picker API script. -->
 <script>
