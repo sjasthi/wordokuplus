@@ -439,7 +439,12 @@ var applicationKey = '35eec536773b5a78381170dfb88a1f18'
 var secretKey = '2f0faa565d31ab66'
 var flickrAuthUrl = 'https://www.flickr.com/services/oauth/authorize'
 function accessFlickr(){
-	
+	var oauth_nonce;
+	var oauth_signature_method = "HMAC-SHA1";
+	var oauth_signature;
+	var oauth_timestamp;
+	var oauth_callback;
+	var oauth_version = "1.0";//optional
 }
 </script>
 
