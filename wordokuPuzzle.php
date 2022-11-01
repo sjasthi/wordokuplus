@@ -164,17 +164,15 @@ else {
 			$_SESSION['puzzles'] = array();
 			$_SESSION["words"] = array();
 			$_SESSION["images"] = array();
-			$_SESSION['puzzObj'] = array();
 			$_SESSION['solutions'] = array();
-			$puzzleArray = array();
+			//$puzzleArray = array();
 			for($i = 0; $i < $numPuzzles; $i++){
 				$wordoku = new Wordoku($sizeNum, $word, $hiddenCount);
-				array_push($puzzleArray, $wordoku);
-				$solution = $puzzleArray[$i]->getSolution();
-				$puzzle = $puzzleArray[$i]->getPuzzle();
-				$characters = $puzzleArray[$i]->getCharacters();
+				//array_push($puzzleArray, $wordoku);
+				$solution = $wordoku->getSolution();
+				$puzzle = $wordoku->getPuzzle();
+				$characters = $wordoku->getCharacters();
 				$word = $wordoku->getWord();
-				array_push($_SESSION['puzzObj'], $wordoku);
 				array_push($_SESSION["puzzles"], $puzzle);
 				array_push($_SESSION['solutions'], $solution);
 				$_SESSION["word"] = $word;

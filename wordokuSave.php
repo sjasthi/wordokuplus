@@ -42,7 +42,10 @@ if ($size == "2x2") {
 //die($_SESSION['size']);
 
 $margin = 10;
-require("Wordoku.php");
+$nav_selected = "LIST";
+$left_buttons = "NO";
+$left_selected = "";
+include("./nav.php");
 require_once 'PhpPresentation/src/PhpPresentation/Autoloader.php';
 \PhpOffice\PhpPresentation\Autoloader::register();
 require_once 'PhpOffice/src/Common/Autoloader.php';
@@ -407,7 +410,5 @@ $oWriterPPTX->save(__DIR__ . "/" . $filename);
 
 echo '<h1 style="text-align:center; margin-top:50px"> Wordoku has been saved </h1><p style="text-align:center; margin-top:20px">Click the link below to download now</p>';
 echo '<p style="text-align:center; margin-top:20px; font-size:20px"><a href="' . $filename . '">Download now</a></p>';
-
-echo '<br><p style="text-align:center; margin-top:20px; font-size:20px"><a href="index.php">Back Home</a></p>';
 
 exit();
