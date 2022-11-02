@@ -42,7 +42,10 @@ if ($size == "2x2") {
 //die($_SESSION['size']);
 
 $margin = 10;
-
+$nav_selected = "LIST";
+$left_buttons = "NO";
+$left_selected = "";
+include("./nav.php");
 require_once 'PhpPresentation/src/PhpPresentation/Autoloader.php';
 \PhpOffice\PhpPresentation\Autoloader::register();
 require_once 'PhpOffice/src/Common/Autoloader.php';
@@ -91,7 +94,8 @@ $objPHPPowerPoint->removeSlideByIndex(0);
 
 
 for ($iz = 0; $iz < count($puzzles); $iz++) {
-
+	
+	  $puzzle = $puzzles[$iz];
       // // Create slide
       //$currentSlide = $objPHPPowerPoint->getActiveSlide();
       $currentSlide = $objPHPPowerPoint->createSlide();
@@ -104,15 +108,25 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
       $shape->setName('PHPPresentation logo')
             ->setDescription('PHPPresentation logo')
             ->setPath('app_header.png')
-            ->setHeight(36)
-            ->setOffsetX(5)
+            ->setHeight(72)
+            ->setOffsetX(0)
             ->setOffsetY(5);
+			
+			
+			
+	  $shape = $currentSlide->createRichTextShape()
+            ->setWidth(800)
+            ->setOffsetX(50)
+            ->setOffsetY(5);
+      $shape->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+      $textRun = $shape->createTextRun('Puzzle '.$iz+1);
+      $textRun->getFont()->setSize(18);
 
       // Create a shape (text)
       $shape = $currentSlide->createRichTextShape()
             ->setWidth(800)
             ->setOffsetX(50)
-            ->setOffsetY(5);
+            ->setOffsetY(50);
       $shape->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
       $textRun = $shape->createTextRun($words[$iz]);
       $textRun->getFont()->setSize(18);
@@ -126,7 +140,7 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
             ->setOffsetX(850)
             ->setOffsetY(5);
       $shape->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
-      $textRun = $shape->createTextRun(($iz + 1));
+      $textRun = $shape->createTextRun('P-'.($iz + 1));
       $textRun->getFont()->setSize(16);
       //->setColor( new Color( 'FFFFFF' ) );
       $shape->getFill()->setFillType(Fill::FILL_GRADIENT_LINEAR)
@@ -173,7 +187,7 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
       $shape->setOffsetY(100);
 
       $row_i = 0;
-      foreach ($puzzles[$iz] as $key => $value) {
+      foreach ($puzzle as $key => $value) {
 
 
             $row = $shape->createRow();
@@ -230,6 +244,163 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
             $row_i++;
       }
 }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  for ($iz = 0; $iz < count($puzzles); $iz++) {
+	
+	  $solution = $_SESSION['solutions'][$iz];
+      // // Create slide
+      //$currentSlide = $objPHPPowerPoint->getActiveSlide();
+      $currentSlide = $objPHPPowerPoint->createSlide();
+
+
+
+
+      // Create a shape (drawing)
+      $shape = $currentSlide->createDrawingShape();
+      $shape->setName('PHPPresentation logo')
+            ->setDescription('PHPPresentation logo')
+            ->setPath('app_header.png')
+            ->setHeight(72)
+            ->setOffsetX(0)
+            ->setOffsetY(5);
+
+      // Create a shape (text)
+      $shape = $currentSlide->createRichTextShape()
+            ->setWidth(800)
+            ->setOffsetX(50)
+            ->setOffsetY(50);
+      $shape->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+      $textRun = $shape->createTextRun($words[$iz]);
+      $textRun->getFont()->setSize(18);
+      //->setColor( new Color( 'FFE06B20' ) );
+	  
+	  
+	  $shape = $currentSlide->createRichTextShape()
+            ->setWidth(800)
+            ->setOffsetX(50)
+            ->setOffsetY(5);
+      $shape->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+      $textRun = $shape->createTextRun('Solution '.$iz+1);
+      $textRun->getFont()->setSize(18);
+
+
+      // Create a shape (text)
+      $shape = $currentSlide->createRichTextShape()
+            ->setWidth(50)
+            ->setHeight(50)
+            ->setOffsetX(850)
+            ->setOffsetY(5);
+      $shape->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+      $textRun = $shape->createTextRun('S-'.($iz + 1));
+      $textRun->getFont()->setSize(16);
+      //->setColor( new Color( 'FFFFFF' ) );
+      $shape->getFill()->setFillType(Fill::FILL_GRADIENT_LINEAR)
+            ->setRotation(90)
+            ->setStartColor(new Color('FFE06B20'))
+            ->setEndColor(new Color('0000FF99'));
+	
+
+      if ($total_images > 0) {
+
+            $image_index = $iz;
+            if ($total_puzzles > $total_images) {
+                  $image_index  = $iz % $total_images;
+            }
+            if (file_exists($images[$image_index])) {
+
+                  // Create a shape (drawing)
+                  $shape2 = $currentSlide->createDrawingShape();
+                  $shape2->setName('Puzzle image ' . $iz)
+                        ->setDescription('Image image' . $iz)
+                        ->setResizeProportional(true)
+                        ->setPath($images[$image_index])
+                        ->setWidth(($width * 0.75))
+                        //->setHeight($width)
+                        ->setOffsetX(30)
+                        ->setOffsetY(100);
+            }
+      }
+      /// Set the image in middle
+      if ($shape2->getHeight() <  $width) {
+
+            $offset = ($width - $shape2->getHeight()) / 2 +  $shape2->getOffsetY();
+            $shape2->setOffsetY($offset);
+      } elseif ($shape2->getHeight() >  $width) {
+
+            $shape2->setHeight($width);
+      }
+
+
+      $shape = $currentSlide->createTableShape($cols);
+      $shape->setHeight($width);
+      $shape->setWidth($width);
+      $shape->setOffsetX(($width * 0.75) + 45);
+      $shape->setOffsetY(100);
+
+      $row_i = 0;
+      foreach ($solution as $key => $value) {
+
+
+            $row = $shape->createRow();
+            //       $row->getFill()->setFillType(Fill::FILL_SOLID)
+            //     ->setStartColor(new Color('FFE06B20'))
+            //     ->setEndColor(new Color('FFE06B20'));
+
+            $row->setHeight($width / $cols);
+
+            $col_i = 0;
+            foreach ($value as $k => $val) {
+
+                  $cell = $row->nextCell();
+                  $cell->createTextRun($val)->getFont()->setSize($fontSize);;
+                  $cell->setWidth($width / $cols);
+                  if ($val != " ") {
+                        $cell->getFill()->setFillType(Fill::FILL_GRADIENT_LINEAR)
+                              ->setRotation(90)
+                              ->setStartColor(new Color('ffedebeb'))
+                              ->setEndColor(new Color('ffedebeb'));
+                  }
+                  $cell->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER)->setVertical(Alignment::VERTICAL_CENTER);
+
+                  // $cell->getActiveParagraph()->getAlignment()
+                  //       ->setMarginBottom($margin)
+                  //       ->setMarginLeft($margin)
+                  //       ->setMarginRight($margin)
+                  //       ->setMarginTop($margin);
+
+
+                  if ($row_i % $boxSize == 0) {
+                        //boder-top
+                        $cell->getBorders()->getTop()->setLineWidth(3)
+                              ->setLineStyle(Border::LINE_SINGLE);
+                  }
+                  if ($col_i % $boxSize == 0) {
+                        //boder-left
+                        $cell->getBorders()->getLeft()->setLineWidth(3)
+                              ->setLineStyle(Border::LINE_SINGLE);
+                  }
+                  if (($row_i + 1) % $boxSize == 0) {
+                        //boder-bottom
+                        $cell->getBorders()->getBottom()->setLineWidth(3)
+                              ->setLineStyle(Border::LINE_SINGLE);
+                  }
+                  if (($col_i + 1) % $boxSize == 0) {
+                        //boder-right
+                        $cell->getBorders()->getRight()->setLineWidth(3)
+                              ->setLineStyle(Border::LINE_SINGLE);
+                  }
+
+                  $col_i++;
+            }
+            $row_i++;
+      }
+	}
 
 
 $filename = 'uploads/' . $size . '_wordoku.pptx';
@@ -239,7 +410,5 @@ $oWriterPPTX->save(__DIR__ . "/" . $filename);
 
 echo '<h1 style="text-align:center; margin-top:50px"> Wordoku has been saved </h1><p style="text-align:center; margin-top:20px">Click the link below to download now</p>';
 echo '<p style="text-align:center; margin-top:20px; font-size:20px"><a href="' . $filename . '">Download now</a></p>';
-
-echo '<br><p style="text-align:center; margin-top:20px; font-size:20px"><a href="index.php">Back Home</a></p>';
 
 exit();

@@ -9,8 +9,8 @@
 <?php
 							for($x = 0; $x < $numPuzzles; $x++){
 								
-								$solution = $puzzleArray[$x]->getSolution();
-								$puzzle = $puzzleArray[$x]->getPuzzle();
+								$solution = $_SESSION['solutions'][$x];
+								$puzzle = $_SESSION['puzzles'][$x];
 		
 								$_SESSION["solution"] = $solution;
 								$_SESSION["puzzle"] = $puzzle;
@@ -158,8 +158,8 @@
 							<?php
 							for($x = 0; $x < $numPuzzles; $x++){
 								
-								$solution = $puzzleArray[$x]->getSolution();
-								$puzzle = $puzzleArray[$x]->getPuzzle();
+								$solution = $_SESSION['solutions'][$x];
+								$puzzle = $_SESSION['puzzles'][$x];
 		
 								$_SESSION["solution"] = $solution;
 								$_SESSION["puzzle"] = $puzzle;
