@@ -1,7 +1,9 @@
+<?php ob_start();
+session_start(); ?>
+
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN''http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 
 <head>
-	
 </head>
 
 <body>
@@ -46,12 +48,13 @@
 									</div>
 								</div>
 							</div>
-							<?php if(count($images) > 0){ ?>
+							<?php if(!$hasImages){ ?>
 							<div class="col-sm-4" id="imageBlock">
 								<?php
-
+									$imagesDir = 'public_html/wordokuplus/images/uploads/'.session_id();
+									$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+									echo('public_html/wordokuplus/images/uploads/'.session_id());
 									$randomImage = $images[array_rand($images)];
-									array_push($_SESSION['images'], $randomImage);
 								?>
 								<img id="userImg" src="<?php echo $randomImage; ?>">
 							</div>
@@ -238,3 +241,5 @@
 				<?php } ?>
 </div>
 </body>
+
+<?php ob_flush(); ?>

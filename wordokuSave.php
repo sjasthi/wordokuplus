@@ -1,7 +1,9 @@
 <?php
-
-
 session_start();
+$nav_selected = "LIST";
+$left_buttons = "NO";
+$left_selected = ""; 
+include("./nav.php");
 
 $puzzles = $_SESSION['puzzles'];
 $size = $_SESSION['size'];
@@ -34,7 +36,7 @@ if ($size == "2x2") {
       $width = 500;
       $fontSize = 14;
 } else {
-      die("We cannot hanlde this size: " . $size);
+      die("We cannot handle this size: " . $size);
 }
 
 
@@ -407,8 +409,10 @@ $filename = 'uploads/' . $size . '_wordoku.pptx';
 
 $oWriterPPTX = IOFactory::createWriter($objPHPPowerPoint, 'PowerPoint2007');
 $oWriterPPTX->save(__DIR__ . "/" . $filename);
-
-echo '<h1 style="text-align:center; margin-top:50px"> Wordoku has been saved </h1><p style="text-align:center; margin-top:20px">Click the link below to download now</p>';
-echo '<p style="text-align:center; margin-top:20px; font-size:20px"><a href="' . $filename . '">Download now</a></p>';
-
-exit();
+?>
+</head>
+<body>
+<h1 style="text-align:center; margin-top:50px"> Wordoku has been saved </h1><p style="text-align:center; margin-top:20px">Click the link below to download now</p>';
+<p style="text-align:center; margin-top:20px; font-size:20px"><a href="' . $filename . '">Download now</a></p>';
+</body>
+<?php exit(); ?>
