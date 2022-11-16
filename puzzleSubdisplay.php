@@ -49,9 +49,9 @@
 							<?php if(count($images) > 0){ ?>
 							<div class="col-sm-4" id="imageBlock">
 								<?php
-
+									$imagesDir = 'public_html/wordokuplus/images/uploads/'.session_id().'/';
+									$images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 									$randomImage = $images[array_rand($images)];
-									array_push($_SESSION['images'], $randomImage);
 								?>
 								<img id="userImg" src="<?php echo $randomImage; ?>">
 							</div>

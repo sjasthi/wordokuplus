@@ -3,7 +3,7 @@ session_start();
 $countFiles = count($_FILES['files']['name']);
 
 
-$dir = "uploads/" . session_id();
+$dir = "public_html/wordokuplus/images/uploads/" . session_id();
 if(is_dir($dir)){
 	$it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
 	$files = new RecursiveIteratorIterator($it,RecursiveIteratorIterator::CHILD_FIRST);
