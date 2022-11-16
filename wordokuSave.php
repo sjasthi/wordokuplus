@@ -1,5 +1,9 @@
-<head>
-<?php include("./nav.php");
+<?php
+session_start();
+$nav_selected = "LIST";
+$left_buttons = "NO";
+$left_selected = ""; 
+include("./nav.php");
 
 $puzzles = $_SESSION['puzzles'];
 $size = $_SESSION['size'];

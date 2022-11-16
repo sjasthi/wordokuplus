@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once './initialize.php';
 ?>
 
@@ -88,4 +89,5 @@ require_once './initialize.php';
           <td style="width: 100%;" valign="top">
           <?php
         }
+		ob_flush();
           ?>
