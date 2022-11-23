@@ -44,10 +44,6 @@ if ($size == "2x2") {
 //die($_SESSION['size']);
 
 $margin = 10;
-$nav_selected = "LIST";
-$left_buttons = "NO";
-$left_selected = "";
-include("./nav.php");
 require_once 'PhpPresentation/src/PhpPresentation/Autoloader.php';
 \PhpOffice\PhpPresentation\Autoloader::register();
 require_once 'PhpOffice/src/Common/Autoloader.php';
@@ -172,6 +168,7 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
             }
       }
       /// Set the image in middle
+	  
       if ($shape2->getHeight() <  $width) {
 
             $offset = ($width - $shape2->getHeight()) / 2 +  $shape2->getOffsetY();
@@ -180,7 +177,6 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
 
             $shape2->setHeight($width);
       }
-
 
       $shape = $currentSlide->createTableShape($cols);
       $shape->setHeight($width);
@@ -408,11 +404,12 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
 $filename = 'uploads/' . $size . '_wordoku.pptx';
 
 $oWriterPPTX = IOFactory::createWriter($objPHPPowerPoint, 'PowerPoint2007');
-$oWriterPPTX->save(__DIR__ . "/" . $filename);
+$oWriterPPTX->save($filename);
+//$oWriterPPTX->save(__DIR__ . "/" . $filename);
 ?>
 </head>
 <body>
 <h1 style="text-align:center; margin-top:50px"> Wordoku has been saved </h1><p style="text-align:center; margin-top:20px">Click the link below to download now</p>';
-<p style="text-align:center; margin-top:20px; font-size:20px"><a href="' . $filename . '">Download now</a></p>';
+<p style="text-align:center; margin-top:20px; font-size:20px"><a href="<?php echo $filename; ?>">Download now</a></p>';
 </body>
 <?php exit(); ?>

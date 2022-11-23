@@ -1,6 +1,6 @@
 <?php
-ob_start();
 require_once './initialize.php';
+ob_start();
 ?>
 
 <!DOCTYPE html>
@@ -89,5 +89,4 @@ require_once './initialize.php';
           <td style="width: 100%;" valign="top">
           <?php
         }
-		ob_flush();
           ?>
