@@ -4,7 +4,7 @@ $countFiles = count($_FILES['files']['name']);
 
 
 $dir = "uploads/" . session_id();
-if(is_dir($dir)){
+/*if(is_dir($dir)){
 	$it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
 	$files = new RecursiveIteratorIterator($it,RecursiveIteratorIterator::CHILD_FIRST);
 	foreach($files as $file) {
@@ -15,7 +15,7 @@ if(is_dir($dir)){
 		}
 	}
 	rmdir($dir);
-}
+}*/
 
 
 
@@ -44,6 +44,7 @@ for($i=0; $i<$countFiles; $i++){
 		}
 	}
 }
+$_SESSION["hasImages"] = true;
 echo $count;
 exit;
 ?>

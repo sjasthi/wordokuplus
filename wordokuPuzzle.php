@@ -256,7 +256,7 @@ else {
 												echo ucwords($difficulty);
 											?>
 										</h2>	
-<div class="col-sm-12"><input type="submit" name="submit" class="btn btn-primary btn-lg" value="Save"></div>									
+										<div class="col-sm-12"><input type="submit" name="submit" class="btn btn-primary btn-lg" value="Save"></div>									
 									</div>
 									<div class="col-sm-2">
 									</div>

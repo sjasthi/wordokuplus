@@ -902,3 +902,385 @@ Stack trace:
 #2 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(408): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('/home2/icsbinco...')
 #3 {main}
   thrown in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/Drawing/File.php on line 72
+[21-Nov-2022 18:51:00 America/Boise] PHP Fatal error:  Uncaught Exception: File  does not exist in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/Drawing/File.php:72
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007/ContentTypes.php(126): PhpOffice\PhpPresentation\Shape\Drawing\File->getMimeType()
+#1 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(126): PhpOffice\PhpPresentation\Writer\PowerPoint2007\ContentTypes->render()
+#2 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(408): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('/home2/icsbinco...')
+#3 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/Drawing/File.php on line 72
+[21-Nov-2022 18:59:58 America/Boise] PHP Fatal error:  Uncaught Exception: File  does not exist in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/Drawing/File.php:72
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007/ContentTypes.php(126): PhpOffice\PhpPresentation\Shape\Drawing\File->getMimeType()
+#1 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(126): PhpOffice\PhpPresentation\Writer\PowerPoint2007\ContentTypes->render()
+#2 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(408): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('/home2/icsbinco...')
+#3 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/Drawing/File.php on line 72
+[21-Nov-2022 19:01:44 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[21-Nov-2022 19:01:49 America/Boise] PHP Fatal error:  Uncaught Exception: File  does not exist in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/Drawing/File.php:72
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007/ContentTypes.php(126): PhpOffice\PhpPresentation\Shape\Drawing\File->getMimeType()
+#1 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(126): PhpOffice\PhpPresentation\Writer\PowerPoint2007\ContentTypes->render()
+#2 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(408): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('/home2/icsbinco...')
+#3 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/Drawing/File.php on line 72
+[21-Nov-2022 19:04:54 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:06:46 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:07:40 America/Boise] PHP Warning:  Array to string conversion in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:07:40 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[21-Nov-2022 19:08:30 America/Boise] PHP Warning:  Array to string conversion in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:08:30 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[21-Nov-2022 19:12:14 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:12:45 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:13:27 America/Boise] PHP Warning:  Undefined variable $imageDir in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:13:27 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:13:32 America/Boise] PHP Warning:  Undefined variable $imageDir in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:13:32 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:14:33 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:17:16 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:17:37 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[21-Nov-2022 19:17:39 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:19:51 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:30:45 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:31:30 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:54
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(54): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 54
+[21-Nov-2022 19:35:09 America/Boise] PHP Warning:  scandir(public_html/wordokuplus/images/uploads/6be238a84ea444bcaa8ff2ddaa040e91): Failed to open directory: No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:35:09 America/Boise] PHP Warning:  scandir(): (errno 2): No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:35:09 America/Boise] PHP Fatal error:  Uncaught TypeError: array_rand(): Argument #1 ($array) must be of type array, bool given in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(false)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[21-Nov-2022 19:37:08 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[21-Nov-2022 19:37:24 America/Boise] PHP Warning:  scandir(public_html/wordokuplus/images/uploads/6be238a84ea444bcaa8ff2ddaa040e91): Failed to open directory: No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:37:24 America/Boise] PHP Warning:  scandir(): (errno 2): No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:37:24 America/Boise] PHP Fatal error:  Uncaught TypeError: array_rand(): Argument #1 ($array) must be of type array, bool given in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(false)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[21-Nov-2022 19:39:47 America/Boise] PHP Warning:  scandir(public_html/wordokuplus/uploads/6be238a84ea444bcaa8ff2ddaa040e91): Failed to open directory: No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:39:47 America/Boise] PHP Warning:  scandir(): (errno 2): No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:39:47 America/Boise] PHP Fatal error:  Uncaught TypeError: array_rand(): Argument #1 ($array) must be of type array, bool given in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(false)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[21-Nov-2022 19:41:56 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[21-Nov-2022 19:42:21 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[21-Nov-2022 19:42:23 America/Boise] PHP Warning:  scandir(public_html/wordokuplus/uploads/6be238a84ea444bcaa8ff2ddaa040e91): Failed to open directory: No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:42:23 America/Boise] PHP Warning:  scandir(): (errno 2): No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:42:23 America/Boise] PHP Fatal error:  Uncaught TypeError: array_rand(): Argument #1 ($array) must be of type array, bool given in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(false)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[21-Nov-2022 19:44:25 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[21-Nov-2022 19:45:02 America/Boise] PHP Warning:  scandir(public_html/wordokuplus/uploads/6be238a84ea444bcaa8ff2ddaa040e91): Failed to open directory: No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:45:02 America/Boise] PHP Warning:  scandir(): (errno 2): No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:45:02 America/Boise] PHP Fatal error:  Uncaught TypeError: array_rand(): Argument #1 ($array) must be of type array, bool given in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(false)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[21-Nov-2022 19:47:05 America/Boise] PHP Fatal error:  Uncaught Exception: File  does not exist in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/Drawing/File.php:72
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007/ContentTypes.php(126): PhpOffice\PhpPresentation\Shape\Drawing\File->getMimeType()
+#1 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(126): PhpOffice\PhpPresentation\Writer\PowerPoint2007\ContentTypes->render()
+#2 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(408): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('/home2/icsbinco...')
+#3 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/Drawing/File.php on line 72
+[21-Nov-2022 19:58:04 America/Boise] PHP Warning:  scandir(public_html/wordokuplus/uploads/6be238a84ea444bcaa8ff2ddaa040e91): Failed to open directory: No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:58:04 America/Boise] PHP Warning:  scandir(): (errno 2): No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:58:04 America/Boise] PHP Fatal error:  Uncaught TypeError: array_rand(): Argument #1 ($array) must be of type array, bool given in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(false)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[21-Nov-2022 19:58:06 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 171
+[21-Nov-2022 19:58:06 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:171
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 171
+[21-Nov-2022 19:59:09 America/Boise] PHP Warning:  scandir(public_html/wordokuplus/uploads/6be238a84ea444bcaa8ff2ddaa040e91): Failed to open directory: No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:59:09 America/Boise] PHP Warning:  scandir(): (errno 2): No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[21-Nov-2022 19:59:09 America/Boise] PHP Fatal error:  Uncaught TypeError: array_rand(): Argument #1 ($array) must be of type array, bool given in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(false)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[21-Nov-2022 19:59:10 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 329
+[21-Nov-2022 19:59:10 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:329
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 329
+[22-Nov-2022 09:55:38 America/Boise] PHP Warning:  scandir(public_html/wordokuplus/uploads/18f33ab478766b7998fe60ca844c35ba): Failed to open directory: No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[22-Nov-2022 09:55:38 America/Boise] PHP Warning:  scandir(): (errno 2): No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[22-Nov-2022 09:55:38 America/Boise] PHP Fatal error:  Uncaught TypeError: array_rand(): Argument #1 ($array) must be of type array, bool given in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(false)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[22-Nov-2022 09:56:14 America/Boise] PHP Warning:  scandir(/public_html/wordokuplus/uploads/18f33ab478766b7998fe60ca844c35ba): Failed to open directory: No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[22-Nov-2022 09:56:14 America/Boise] PHP Warning:  scandir(): (errno 2): No such file or directory in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 53
+[22-Nov-2022 09:56:14 America/Boise] PHP Fatal error:  Uncaught TypeError: array_rand(): Argument #1 ($array) must be of type array, bool given in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(false)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[22-Nov-2022 09:57:18 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[22-Nov-2022 09:58:43 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[22-Nov-2022 10:00:19 America/Boise] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php:55
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php(55): array_rand(Array)
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuPuzzle.php(298): include('/home2/icsbinco...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 55
+[22-Nov-2022 10:00:24 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 329
+[22-Nov-2022 10:00:24 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:329
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 329
+[22-Nov-2022 10:06:13 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[22-Nov-2022 10:06:15 America/Boise] PHP Parse error:  syntax error, unexpected token ";" in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 52
+[22-Nov-2022 10:08:09 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 10:09:19 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 10:10:42 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 10:11:17 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:08:27 America/Boise] PHP Warning:  Undefined array key "puzzles" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 8
+[22-Nov-2022 11:08:27 America/Boise] PHP Warning:  Undefined array key "size" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 9
+[22-Nov-2022 11:08:27 America/Boise] PHP Warning:  Undefined array key "words" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 10
+[22-Nov-2022 11:08:27 America/Boise] PHP Warning:  Undefined array key "images" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 11
+[22-Nov-2022 11:08:27 America/Boise] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:14
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 14
+[22-Nov-2022 11:10:48 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 329
+[22-Nov-2022 11:10:48 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:329
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 329
+[22-Nov-2022 11:10:58 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 329
+[22-Nov-2022 11:10:58 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:329
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 329
+[22-Nov-2022 11:14:12 America/Boise] PHP Warning:  ZipArchive::close(): Failure to create temporary file: No such file or directory in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 35
+[22-Nov-2022 11:14:12 America/Boise] PHP Fatal error:  Uncaught Exception: Could not close zip file public_html/wordokuplus/uploads/uploads/3x3_wordoku.pptx. in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php:36
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(131): PhpOffice\Common\Adapter\Zip\ZipArchiveAdapter->close()
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(408): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('public_html/wor...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 36
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:15:51 America/Boise] PHP Warning:  Undefined variable $randomImage in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 61
+[22-Nov-2022 11:16:04 America/Boise] PHP Warning:  ZipArchive::close(): Failure to create temporary file: No such file or directory in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 35
+[22-Nov-2022 11:16:04 America/Boise] PHP Fatal error:  Uncaught Exception: Could not close zip file public_html/wordokuplus/uploads/uploads/3x3_wordoku.pptx. in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php:36
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(131): PhpOffice\Common\Adapter\Zip\ZipArchiveAdapter->close()
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(407): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('public_html/wor...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 36
+[22-Nov-2022 11:17:55 America/Boise] PHP Warning:  ZipArchive::close(): Failure to create temporary file: No such file or directory in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 35
+[22-Nov-2022 11:17:55 America/Boise] PHP Fatal error:  Uncaught Exception: Could not close zip file public_html/wordokuplus/uploads/uploads/3x3_wordoku.pptx. in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php:36
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(131): PhpOffice\Common\Adapter\Zip\ZipArchiveAdapter->close()
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(407): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('public_html/wor...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 36
+[22-Nov-2022 11:19:17 America/Boise] PHP Warning:  ZipArchive::close(): Failure to create temporary file: No such file or directory in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 35
+[22-Nov-2022 11:19:17 America/Boise] PHP Fatal error:  Uncaught Exception: Could not close zip file public_html/wordokuplus/uploads/uploads/3x3_wordoku.pptx. in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php:36
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(131): PhpOffice\Common\Adapter\Zip\ZipArchiveAdapter->close()
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(407): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('public_html/wor...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 36
+[22-Nov-2022 11:20:53 America/Boise] PHP Warning:  ZipArchive::close(): Failure to create temporary file: No such file or directory in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 35
+[22-Nov-2022 11:20:53 America/Boise] PHP Fatal error:  Uncaught Exception: Could not close zip file uploads/uploads/3x3_wordoku.pptx. in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php:36
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(131): PhpOffice\Common\Adapter\Zip\ZipArchiveAdapter->close()
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(407): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('uploads/uploads...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 36
+[22-Nov-2022 11:21:31 America/Boise] PHP Warning:  ZipArchive::close(): Failure to create temporary file: No such file or directory in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 35
+[22-Nov-2022 11:21:31 America/Boise] PHP Fatal error:  Uncaught Exception: Could not close zip file uploads/uploads/3x3_wordoku.pptx. in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php:36
+Stack trace:
+#0 /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Writer/PowerPoint2007.php(131): PhpOffice\Common\Adapter\Zip\ZipArchiveAdapter->close()
+#1 /home2/icsbinco/public_html/wordokuplus/wordokuSave.php(407): PhpOffice\PhpPresentation\Writer\PowerPoint2007->save('uploads/uploads...')
+#2 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/PhpOffice/src/Common/Adapter/Zip/ZipArchiveAdapter.php on line 36
+[22-Nov-2022 18:21:26 America/Boise] PHP Parse error:  syntax error, unexpected token "else", expecting end of file in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 63
+[22-Nov-2022 18:21:30 America/Boise] PHP Parse error:  syntax error, unexpected token "else", expecting end of file in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 63
+[22-Nov-2022 18:22:14 America/Boise] PHP Parse error:  syntax error, unexpected token "else" in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 63
+[22-Nov-2022 18:22:16 America/Boise] PHP Parse error:  syntax error, unexpected token "else" in /home2/icsbinco/public_html/wordokuplus/puzzleSubdisplay.php on line 63
+[22-Nov-2022 18:23:29 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 172
+[22-Nov-2022 18:23:29 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:172
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 172
+[22-Nov-2022 18:26:23 America/Boise] PHP Parse error:  syntax error, unexpected token "{" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 11
+[22-Nov-2022 18:26:56 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 177
+[22-Nov-2022 18:26:56 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:177
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 177
+[22-Nov-2022 18:37:06 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 172
+[22-Nov-2022 18:37:06 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:172
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 172
+[22-Nov-2022 18:37:58 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 176
+[22-Nov-2022 18:37:58 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:176
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 176
+[22-Nov-2022 18:39:06 America/Boise] PHP Warning:  Undefined variable $shape2 in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 333
+[22-Nov-2022 18:39:06 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getHeight() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:333
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 333
+[22-Nov-2022 19:39:19 America/Boise] PHP Warning:  Undefined array key "hasImages" in /home2/icsbinco/public_html/wordokuplus/index.php on line 133
+[22-Nov-2022 19:39:32 America/Boise] PHP Warning:  Undefined array key "hasImages" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 13
+[22-Nov-2022 20:22:38 America/Boise] PHP Warning:  Undefined array key "puzzles" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 8
+[22-Nov-2022 20:22:38 America/Boise] PHP Warning:  Undefined array key "size" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 9
+[22-Nov-2022 20:22:38 America/Boise] PHP Warning:  Undefined array key "words" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 10
+[22-Nov-2022 20:22:38 America/Boise] PHP Warning:  Undefined array key "images" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 11
+[22-Nov-2022 20:22:38 America/Boise] PHP Warning:  Undefined array key "hasImages" in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 13
+[22-Nov-2022 20:22:38 America/Boise] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:19
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 19
+[29-Nov-2022 09:29:40 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 09:33:36 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 09:34:03 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 09:34:52 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 09:42:54 America/Boise] PHP Warning:  Undefined variable $textRun in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 125
+[29-Nov-2022 09:42:54 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function getFont() on null in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php:125
+Stack trace:
+#0 {main}
+  thrown in /home2/icsbinco/public_html/wordokuplus/wordokuSave.php on line 125
+[29-Nov-2022 11:13:38 America/Boise] PHP Warning:  mkdir(): No such file or directory in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 11:13:38 America/Boise] PHP Warning:  move_uploaded_file(uploads/628b78b323317f525958b0fe7acbcddd/realistic,maw, zombie s-712964739 - Copy - Copy - Copy - Copy - Copy - Copy - Copy.png): Failed to open stream: No such file or directory in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 42
+[29-Nov-2022 11:13:38 America/Boise] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpLJH9Wi&quot; to &quot;uploads/628b78b323317f525958b0fe7acbcddd/realistic,maw, zombie s-712964739 - Copy - Copy - Copy - Copy - Copy - Copy - Copy.png&quot; in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 42
+[29-Nov-2022 11:20:55 America/Boise] PHP Warning:  Undefined variable $nav_selected in /home2/icsbinco/public_html/wordokuplus/nav.php on line 44
+[29-Nov-2022 11:20:55 America/Boise] PHP Warning:  Undefined variable $nav_selected in /home2/icsbinco/public_html/wordokuplus/nav.php on line 53
+[29-Nov-2022 11:20:55 America/Boise] PHP Warning:  Undefined variable $left_buttons in /home2/icsbinco/public_html/wordokuplus/nav.php on line 71
+[29-Nov-2022 13:47:42 America/Boise] PHP Warning:  Undefined variable $nav_selected in /home2/icsbinco/public_html/wordokuplus/nav.php on line 44
+[29-Nov-2022 13:47:42 America/Boise] PHP Warning:  Undefined variable $nav_selected in /home2/icsbinco/public_html/wordokuplus/nav.php on line 53
+[29-Nov-2022 13:47:42 America/Boise] PHP Warning:  Undefined variable $left_buttons in /home2/icsbinco/public_html/wordokuplus/nav.php on line 71
+[29-Nov-2022 13:47:42 America/Boise] PHP Warning:  Undefined variable $nav_selected in /home2/icsbinco/public_html/wordokuplus/nav.php on line 44
+[29-Nov-2022 13:47:42 America/Boise] PHP Warning:  Undefined variable $nav_selected in /home2/icsbinco/public_html/wordokuplus/nav.php on line 53
+[29-Nov-2022 13:47:42 America/Boise] PHP Warning:  Undefined variable $left_buttons in /home2/icsbinco/public_html/wordokuplus/nav.php on line 71
+[29-Nov-2022 13:51:23 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 13:52:43 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 13:54:34 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 13:55:04 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 13:57:08 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 13:57:51 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 13:58:42 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 13:59:44 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 14:06:09 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 14:07:21 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 14:08:35 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 14:09:16 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 14:10:33 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 14:10:42 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 14:11:43 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 14:11:54 America/Boise] PHP Warning:  mkdir(): File exists in /home2/icsbinco/public_html/wordokuplus/ajaxfile.php on line 24
+[29-Nov-2022 14:12:24 America/Boise] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 4096 bytes) in /home2/icsbinco/public_html/wordokuplus/PhpPresentation/src/PhpPresentation/Shape/RichText/Paragraph.php on line 78

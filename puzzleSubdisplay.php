@@ -45,24 +45,22 @@
 									</div>
 								</div>
 							</div>
-							<?php if($hasImages){ ?>
+							<?php $imagesDir = "uploads/" . session_id() . "/";
+									if(is_dir($imagesDir)){ ?>
 							<div class="col-sm-4" id="imageBlock">
 								<?php
-									$imagesDir = "uploads/" . session_id() . "/";
-									if(is_dir($imagesDir)){
+									
 										$images = glob($imagesDir . '*.*', GLOB_BRACE);
 										//$images = scandir($imagesDir);
 										$randomImage = $images[array_rand($images)];
 										array_push($_SESSION["images"], $randomImage);
 										?>								<img id="userImg" src="<?php echo $randomImage; ?>"><?php
-									}else{
-										echo("No Directory: " . $imagesDir);
-									}
+									
 								?>
 							</div>
 							<div class="col-sm-8"  id="puzzleNormal">
-							<?php }
-							else{?>
+							<?php 
+									}else{?>
 							<div class="col-sm-12"  id="puzzleNormal"> <?php } ?>
 								<div class="puzzle">
 									<table id="grid">

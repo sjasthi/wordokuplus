@@ -10,8 +10,12 @@ $size = $_SESSION['size'];
 $words = $_SESSION["words"];
 $images = $_SESSION["images"];
 
-
-$total_images = count($images);
+if($_SESSION["hasImages"]){
+	$total_images = count($images);
+}
+else{
+	$total_images = 0;
+}
 $total_puzzles = count($puzzles);
 
 if ($size == "2x2") {
@@ -90,7 +94,6 @@ $objPHPPowerPoint->getDocumentProperties()->setCreator('PHPOffice')
 // Remove first Blank Slide
 $objPHPPowerPoint->removeSlideByIndex(0);
 
-
 for ($iz = 0; $iz < count($puzzles); $iz++) {
 	
 	  $puzzle = $puzzles[$iz];
@@ -107,7 +110,7 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
             ->setDescription('PHPPresentation logo')
             ->setPath('app_header.png')
             ->setHeight(72)
-            ->setOffsetX(0)
+            ->setOffsetX(10)
             ->setOffsetY(5);
 			
 			
@@ -117,14 +120,14 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
             ->setOffsetX(50)
             ->setOffsetY(5);
       $shape->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
-      $textRun = $shape->createTextRun('Puzzle '.$iz+1);
-      $textRun->getFont()->setSize(18);
+      //$textRun = $shape->createTextRun('Puzzle '.$iz+1);
+      //$textRun->getFont()->setSize(18);
 
       // Create a shape (text)
       $shape = $currentSlide->createRichTextShape()
             ->setWidth(800)
             ->setOffsetX(50)
-            ->setOffsetY(50);
+            ->setOffsetY(25);
       $shape->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
       $textRun = $shape->createTextRun($words[$iz]);
       $textRun->getFont()->setSize(18);
@@ -133,7 +136,7 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
 
       // Create a shape (text)
       $shape = $currentSlide->createRichTextShape()
-            ->setWidth(50)
+            ->setWidth(75)
             ->setHeight(50)
             ->setOffsetX(850)
             ->setOffsetY(5);
@@ -166,7 +169,7 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
                         ->setOffsetX(30)
                         ->setOffsetY(100);
             }
-      }
+      
       /// Set the image in middle
 	  
       if ($shape2->getHeight() <  $width) {
@@ -177,6 +180,7 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
 
             $shape2->setHeight($width);
       }
+	  }
 
       $shape = $currentSlide->createTableShape($cols);
       $shape->setHeight($width);
@@ -284,13 +288,13 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
             ->setOffsetX(50)
             ->setOffsetY(5);
       $shape->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
-      $textRun = $shape->createTextRun('Solution '.$iz+1);
-      $textRun->getFont()->setSize(18);
+      //$textRun = $shape->createTextRun('Solution '.$iz+1);
+      //$textRun->getFont()->setSize(18);
 
 
       // Create a shape (text)
       $shape = $currentSlide->createRichTextShape()
-            ->setWidth(50)
+            ->setWidth(75)
             ->setHeight(50)
             ->setOffsetX(850)
             ->setOffsetY(5);
@@ -323,7 +327,7 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
                         ->setOffsetX(30)
                         ->setOffsetY(100);
             }
-      }
+      
       /// Set the image in middle
       if ($shape2->getHeight() <  $width) {
 
@@ -333,6 +337,7 @@ for ($iz = 0; $iz < count($puzzles); $iz++) {
 
             $shape2->setHeight($width);
       }
+	  }
 
 
       $shape = $currentSlide->createTableShape($cols);
