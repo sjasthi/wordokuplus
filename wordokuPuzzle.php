@@ -1,4 +1,3 @@
-
 <?php
 		/*  Created by Stephen Schneider
 		 *	Creates a web page that shows a Wordoku puzzle and solution.
@@ -9,7 +8,6 @@
 		//session_start();
 		 
 
-ob_start();
 $nav_selected = "LIST";
 $left_buttons = "NO";
 $left_selected = "";
@@ -221,9 +219,8 @@ else {
 					break;
 			}
 		}
-		ob_flush();
 	?>
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN''http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 <head>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -259,7 +256,7 @@ else {
 												echo ucwords($difficulty);
 											?>
 										</h2>	
-<div class="col-sm-12"><input type="submit" name="submit" class="btn btn-primary btn-lg" value="Save"></div>									
+										<div class="col-sm-12"><input type="submit" name="submit" class="btn btn-primary btn-lg" value="Save"></div>									
 									</div>
 									<div class="col-sm-2">
 									</div>

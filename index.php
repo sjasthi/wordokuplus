@@ -1,5 +1,6 @@
 <?php
 		/*  Created by Stephen Schneider
+		 *	Additional code provided by Glenn Shanahan, Emmanuel Odidi, and Khalid Adam
 		 *	Index page for the Wordoku puzzle.
 		 *	Allows user to set information for puzzle generation.
 		 *  On first submission page is done as a POST request to validate user input.
@@ -8,6 +9,7 @@
 		 
 	session_start();
 	$_SESSION['ID'] = session_id();
+	$_SESSION["images"] = array();
 	ob_start();
 	require("word_processor.php");
 	$ini = parse_ini_file('config.ini');
@@ -129,7 +131,7 @@
 			
 			if($warningMessage == ""){
 				// Address should be in format: http://localhost/wordoku/wordokupuzzle.php?size=2x2&difficulty=beginner&word=ABCD
-				$url = "wordokuPuzzle.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution."&numPuzzles=".$numPuzzles."&hasImages=true";
+				$url = "wordokuPuzzle.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution."&numPuzzles=".$numPuzzles."&hasImages=" . $_SESSION["hasImages"];
 				//$url = "wordokuPuzzle.php?size=".$size."&hidecount=".$hiddenCount."&difficulty=".$difficulty."&word=".$word."&showsolution=".$showSolution.$extra;
 				//print_r("</br>");
 				print_r($url);
@@ -137,6 +139,21 @@
 				header("Location:".$url);
 				die();
 			}
+		}
+	}else{
+		$dir = "uploads/" . session_id();
+		$_SESSION["hasImages"] = false;
+		if(is_dir($dir)){
+			$it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
+			$files = new RecursiveIteratorIterator($it,RecursiveIteratorIterator::CHILD_FIRST);
+			foreach($files as $file) {
+				if ($file->isDir()){
+					rmdir($file->getRealPath());
+				} else {
+					unlink($file->getRealPath());
+				}
+			}
+			rmdir($dir);
 		}
 	}
 	
@@ -244,14 +261,16 @@
 							<div class="content" id = "content">
 									<div class="col-sm-6">
 										<input type="file" name="files" id="files" class="btn btn-primary btn-lg" multiple>
-										<input type="button" id="btn_uploadfile" class="btn btn-primary btn-lg" value="Upload" onclick="uploadImgs();">
 									</div>
 									<div class="col-sm-3">
+										<input type="button" id="btn_uploadfile" class="btn btn-primary btn-lg" value="Upload" onclick="uploadImgs();">
+									</div>
+									<!--div class="col-sm-3">
 										<input type="button" name="flickr" id="flickr" class="btn btn-primary btn-lg" value = 'Access Flickr' onclick="accessFlickr();">
 									</div>
 									<div class="col-sm-3">
 										<input type="button" name="google photos" id="google photos" class="btn btn-primary btn-lg" value = 'Access Google Photos' onclick=showPickerDialog()>
-									</div>
+									</div-->
 	
 							</div>
                             <div class="row">
